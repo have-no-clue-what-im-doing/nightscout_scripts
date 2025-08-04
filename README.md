@@ -1,2 +1,2 @@
 # nightscout_scripts
-Scripts for install nightscout w/ docker on raspberry pi
+Scripts for installing nightscout w/ docker on raspberry pi
