@@ -94,7 +94,7 @@ services:
       - 'traefik.enable=true'
       # Change the below Host from `localhost` to be the web address where Nightscout is running.
       # Also change the email address in the `traefik` service below.
-      - 'traefik.http.routers.nightscout.rule=Host(`localhost`)'
+      - 'traefik.http.routers.nightscout.rule=Host(`x.x.x.x`)'
       - 'traefik.http.routers.nightscout.entrypoints=websecure'
       - 'traefik.http.routers.nightscout.tls.certresolver=le'
     volumes:
