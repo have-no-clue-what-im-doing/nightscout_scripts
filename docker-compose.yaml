@@ -10,7 +10,6 @@ x-logging:
 services:
   nightscout:
     image: nightscout/cgm-remote-monitor:latest
-    restart: unless-stopped
     environment:
 # -----------------------------------------------------------------------------------------------
 # Here are your Nightscout variables:
