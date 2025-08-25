@@ -10,6 +10,7 @@ x-logging:
 services:
   nightscout:
     image: nightscout/cgm-remote-monitor:latest
+    restart: unless-stopped
     environment:
 # -----------------------------------------------------------------------------------------------
 # Here are your Nightscout variables:
@@ -22,9 +23,19 @@ services:
       SHOW_PLUGINS: careportal sage iob cob dbsize cors ar2 pump loop cage basal override
       DISPLAY_UNITS: mg/dl
 
-      BRIDGE_USER_NAME: username
-      BRIDGE_PASSWORD: password
-      BRIDGE_SERVER: US
+      # Dexcom:
+      #BRIDGE_USER_NAME: username
+      #BRIDGE_PASSWORD: password
+      #BRIDGE_SERVER: US
+
+      # Medtronic
+      #MMCONNECT_USER_NAME: username
+      #MMCONNECT_PASSWORD: password
+
+      # xDrip
+      #API_SECRET: xdrip secret
+      #BASE_URL: xdrip URL
+      
 
       AUTH_DEFAULT_ROLES: readable
       NIGHT_MODE: off
