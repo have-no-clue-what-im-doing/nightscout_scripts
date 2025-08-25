@@ -111,7 +111,7 @@ services:
    # ports:
     #  - "27017:27017"
     #logging: *default-logging
-    #restart: unless-stopped
+    restart: unless-stopped
 
   traefik:
     image: traefik:latest
