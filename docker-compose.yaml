@@ -34,7 +34,6 @@ services:
       # xDrip
       #API_SECRET: xdrip secret
       #BASE_URL: xdrip URL
-      
 
       AUTH_DEFAULT_ROLES: readable
       NIGHT_MODE: off
