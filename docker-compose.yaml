@@ -96,7 +96,7 @@ services:
       # Also change the email address in the `traefik` service below.
       - 'traefik.http.routers.nightscout.rule=Host(`x.x.x.x`)'
       - 'traefik.http.routers.nightscout.entrypoints=websecure'
-      - 'traefik.http.routers.nightscout.tls.certresolver=le'
+      - 'traefik.http.services.nightscout.loadbalancer.server.port=1337'
     volumes:
       - /nightscout/docker:/var/opt/ssl/:ro
     restart: unless-stopped
@@ -120,13 +120,6 @@ services:
       - '--providers.docker=true'
       - '--providers.docker.exposedbydefault=false'
       - '--entrypoints.web.address=:80'
-      - '--entrypoints.web.http.redirections.entrypoint.to=websecure'
-      - '--entrypoints.websecure.address=:443'
-      - "--certificatesresolvers.le.acme.httpchallenge=true"
-      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
-      - '--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json'
-      # Change the below to match your email address
-      - '--certificatesresolvers.le.acme.email=youremail@email.com'
     ports:
       - '443:443'
       - '80:80'
