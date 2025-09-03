@@ -9,6 +9,7 @@ x-logging:
 
 services:
   nightscout:
+    container_name: nightscout
     image: nightscout/cgm-remote-monitor:latest
     environment:
 # -----------------------------------------------------------------------------------------------
